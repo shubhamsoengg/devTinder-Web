@@ -1,12 +1,30 @@
 import React from "react";
 import logo from "../../assets/devTinder_logo_1.png";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { BASE_URL } from "../utils/constants";
+import { removeUser } from "../utils/userSlice";
 
 const Navbar = () => {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const user = useSelector((store) => store.user);
+
+	const handleLogout = async () => {
+		try {
+			const res = await axios.post(
+				BASE_URL + "/logout",
+				{},
+				{
+					withCredentials: true,
+				}
+			);
+			dispatch(removeUser(user));
+			navigate("/login");
+		} catch (error) {}
+	};
 
 	return (
 		<div className="navbar">
@@ -50,7 +68,7 @@ const Navbar = () => {
 								<a>Settings</a>
 							</li>
 							<li>
-								<a>Logout</a>
+								<a onClick={handleLogout}>Logout</a>
 							</li>
 						</ul>
 					</div>

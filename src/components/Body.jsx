@@ -18,13 +18,11 @@ const Body = () => {
 				withCredentials: true,
 			});
 			const userData = res.data;
-			console.log(userData);
 			dispatch(addUser(userData));
 		} catch (error) {
 			if (error.status == 401) {
 				navigate("/login");
 			}
-			console.log(error);
 		}
 	};
 
