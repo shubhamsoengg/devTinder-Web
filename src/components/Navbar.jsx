@@ -41,14 +41,14 @@ const Navbar = () => {
 			</div>
 			{user && (
 				<div className="flex gap-2">
-					<p>Hello, {user.firstName}!</p>
-					<div className="dropdown dropdown-end mx-10">
+					<p className="self-center">Hello, {user.firstName}!</p>
+					<div className="dropdown dropdown-end mr-10">
 						<div
 							tabIndex={0}
 							role="button"
-							className="btn btn-ghost btn-circle avatar"
+							className="btn btn-ghost btn-circle avatar h-full"
 						>
-							<div className="w-10 rounded-full">
+							<div className="rounded-full w-32">
 								<img
 									alt="Tailwind CSS Navbar component"
 									src={user.profilePicture}
