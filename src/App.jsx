@@ -7,6 +7,7 @@ import Body from "./components/Body";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
 import Feed from "./components/Feed";
+import Home from "./components/Home";
 
 function App() {
 	return (
@@ -15,7 +16,8 @@ function App() {
 				<BrowserRouter basename="/">
 					<Routes>
 						<Route path="/" element={<Body />}>
-							<Route path="/" element={<Feed />}></Route>
+							<Route path="/" element={<Home />} />
+							<Route path="/feed" element={<Feed />}></Route>
 							<Route path="/login" element={<Login />} />
 							<Route path="/profile" element={<Profile />} />
 						</Route>
