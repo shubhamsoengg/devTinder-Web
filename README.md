@@ -14,9 +14,7 @@
 -   on frontend, on axios, add withcredentials: true
 
 -   create a profile page and also a live preview section. think about how we can remove the call to action btns from preview.
--   create a connections requests page and accept and reject connections. the request should go off once you accept/reject
--   create a view connections page as well. There should be an option to reject an accepted request as well.
+-   There should be an option to reject an accepted request as well.
 -   do overall site validations.
 -   can we add chat/message options?
-
 -   Can we make the images proper? same size for everyone? best way to upload images, where to store them?

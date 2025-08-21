@@ -44,7 +44,7 @@ const Navbar = () => {
 				<Link to="/feed" className="hover:text-orange-500">
 					Discover
 				</Link>
-				<Link href="/connections" className="hover:text-orange-500">
+				<Link to="/connections" className="hover:text-orange-500">
 					Connections
 				</Link>
 				<a href="/messages" className="hover:text-orange-500">

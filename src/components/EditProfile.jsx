@@ -47,7 +47,7 @@ const EditProfile = ({ user }) => {
 	};
 
 	return (
-		<div className="flex justify-center flex-1 bg-gradient-to-br from-pink-100 via-orange-100 to-yellow-100 p-8">
+		<div className="flex justify-center flex-1 p-8">
 			<div className="flex flex-col md:flex-row gap-10 w-full max-w-5xl shadow-2xl rounded-3xl overflow-hidden bg-white/80 backdrop-blur-lg">
 				<div className="flex flex-col items-center md:items-start gap-8 md:w-1/3 bg-gradient-to-br from-orange-400 via-red-400 to-red-500 p-8">
 					<div className="text-center md:text-left">

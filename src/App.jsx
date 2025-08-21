@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import Profile from "./components/Profile";
 import Feed from "./components/Feed";
 import Home from "./components/Home";
+import Connections from "./components/Connections";
 
 function App() {
 	return (
@@ -19,6 +20,10 @@ function App() {
 							<Route path="/" element={<Home />} />
 							<Route path="/feed" element={<Feed />}></Route>
 							<Route path="/login" element={<Login />} />
+							<Route
+								path="/connections"
+								element={<Connections />}
+							/>
 							<Route path="/profile" element={<Profile />} />
 						</Route>
 					</Routes>
