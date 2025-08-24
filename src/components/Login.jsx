@@ -26,7 +26,8 @@ const Login = () => {
 				},
 				{ withCredentials: true }
 			);
-			dispatch(addUser(res.data));
+			const userData = res?.data?.data;
+			dispatch(addUser(userData));
 			setLoginError(null);
 			return navigate("/");
 		} catch (error) {
@@ -49,8 +50,8 @@ const Login = () => {
 				},
 				{ withCredentials: true }
 			);
-			dispatch(addUser(res.data.data));
-			console.log(res.data.data);
+			const userData = res?.data?.data;
+			dispatch(addUser(userData));
 			return navigate("/profile");
 		} catch (error) {
 			setLoginError(

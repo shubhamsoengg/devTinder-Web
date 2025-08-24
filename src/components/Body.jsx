@@ -17,7 +17,7 @@ const Body = () => {
 			const res = await axios.get(BASE_URL + "/profile/view", {
 				withCredentials: true,
 			});
-			const userData = res.data;
+			const userData = res?.data?.data;
 			dispatch(addUser(userData));
 		} catch (error) {
 			if (error.status == 401) {

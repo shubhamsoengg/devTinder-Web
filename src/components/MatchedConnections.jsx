@@ -13,7 +13,7 @@ const MatchedConnections = () => {
 			const res = await axios.get(`${BASE_URL}/user/connections`, {
 				withCredentials: true,
 			});
-			const connectionData = res?.data?.connections;
+			const connectionData = res?.data?.data;
 			console.log(connectionData);
 			dispatch(setConnections(connectionData));
 		} catch (error) {

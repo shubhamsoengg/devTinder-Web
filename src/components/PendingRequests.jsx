@@ -17,7 +17,7 @@ const PendingRequests = () => {
 			const res = await axios.get(`${BASE_URL}/user/requests/received`, {
 				withCredentials: true,
 			});
-			const requestsData = res?.data?.connectionRequests;
+			const requestsData = res?.data?.data;
 			console.log(requestsData);
 			dispatch(setPendingRequests(requestsData));
 		} catch (error) {
@@ -38,8 +38,8 @@ const PendingRequests = () => {
 				{},
 				{ withCredentials: true }
 			);
-			console.log(res.data.connectionRequest);
-			const updatedRequest = res?.data?.connectionRequest;
+			console.log(res.data.data);
+			const updatedRequest = res?.data?.data;
 			dispatch(updatePendingRequest(updatedRequest._id));
 		} catch (error) {
 			console.error(`Error ${status} request:`, error);
