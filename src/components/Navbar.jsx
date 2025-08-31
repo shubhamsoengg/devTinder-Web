@@ -47,9 +47,18 @@ const Navbar = () => {
 				<Link to="/connections" className="hover:text-orange-500">
 					Connections
 				</Link>
-				<a href="/messages" className="hover:text-orange-500">
+				{/* <a href="/messages" className="hover:text-orange-500">
 					Messages
-				</a>
+				</a> */}
+				{user.premiumUser ? (
+					<span className="text-green-600 font-medium">
+						Premium user!
+					</span>
+				) : (
+					<Link to="/premium" className="hover:text-orange-500">
+						Go Premium!
+					</Link>
+				)}
 			</div>
 
 			{/* Right: User Greeting & Avatar */}
