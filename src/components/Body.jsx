@@ -3,9 +3,9 @@ import Navbar from "./Navbar";
 import { Outlet, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import axios from "axios";
-import { BASE_URL } from "../utils/constants";
+import { BASE_URL } from "../config/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../utils/userSlice";
+import { addUser } from "../store/slice/userSlice";
 
 const Body = () => {
 	const dispatch = useDispatch();
@@ -38,7 +38,6 @@ const Body = () => {
 			<main className="flex-1 container mx-auto p-4">
 				<Outlet />
 			</main>
-			<Footer />
 		</div>
 	);
 };

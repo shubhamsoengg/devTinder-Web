@@ -3,8 +3,8 @@ import logo from "../../assets/devTinder_logo_1.png";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { BASE_URL } from "../utils/constants";
-import { removeUser } from "../utils/userSlice";
+import { BASE_URL } from "../config/constants";
+import { removeUser } from "../store/slice/userSlice";
 import {
 	UserIcon,
 	ArrowRightStartOnRectangleIcon,
@@ -50,7 +50,7 @@ const Navbar = () => {
 				{/* <a href="/messages" className="hover:text-orange-500">
 					Messages
 				</a> */}
-				{user.premiumUser ? (
+				{user?.premiumUser ? (
 					<span className="text-green-600 font-medium">
 						Premium user!
 					</span>

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import appStore from "./utils/appStore";
+import appStore from "./store/appStore";
 
 import Body from "./components/Body";
 import Login from "./components/Login";
@@ -13,6 +13,7 @@ import PremiumMembership from "./components/PremiumMembership";
 import PremiumCheckout from "./components/StripePaymentModule/PremiumCheckout";
 import CompletePage from "./components/StripePaymentModule/CompletePage";
 import CheckoutForm from "./components/StripePaymentModule/CheckoutForm";
+import Chat from "./components/Chat";
 
 function App() {
 	return (
@@ -32,6 +33,10 @@ function App() {
 							<Route
 								path="/premium"
 								element={<PremiumMembership />}
+							/>
+							<Route
+								path="/chat/:targetUserId"
+								element={<Chat />}
 							/>
 						</Route>
 						<Route

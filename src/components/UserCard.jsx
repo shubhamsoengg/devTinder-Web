@@ -1,8 +1,8 @@
 import axios from "axios";
 import React from "react";
-import { BASE_URL } from "../utils/constants";
+import { BASE_URL } from "../config/constants";
 import { useDispatch } from "react-redux";
-import { removeUserFromFeed } from "../utils/feedSlice";
+import { removeUserFromFeed } from "../store/slice/feedSlice";
 
 const UserCard = ({ user }) => {
 	const dispatch = useDispatch();

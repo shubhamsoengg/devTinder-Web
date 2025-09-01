@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setConnections } from "../utils/connectionSlice";
+import { setConnections } from "../store/slice/connectionSlice";
 import axios from "axios";
-import { BASE_URL } from "../utils/constants";
+import { BASE_URL } from "../config/constants";
+import { Link } from "react-router-dom";
 
 const MatchedConnections = () => {
 	const dispatch = useDispatch();
@@ -14,7 +15,6 @@ const MatchedConnections = () => {
 				withCredentials: true,
 			});
 			const connectionData = res?.data?.data;
-			console.log(connectionData);
 			dispatch(setConnections(connectionData));
 		} catch (error) {
 			console.error("Error fetching user connections:", error);
@@ -30,7 +30,7 @@ const MatchedConnections = () => {
 	return (
 		<>
 			{connections.map((connection) => {
-				const { profilePicture, firstName, lastName, age, about } =
+				const { profilePicture, firstName, lastName, age, about, _id } =
 					connection;
 				return (
 					<div
@@ -63,9 +63,12 @@ const MatchedConnections = () => {
 
 						{/* Actions */}
 						<div className="flex flex-col gap-3">
-							<button className="btn btn-sm rounded-xl bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-red-500 text-white">
+							<Link
+								to={`/chat/${_id}`}
+								className="btn btn-sm rounded-xl bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-red-500 text-white"
+							>
 								Message
-							</button>
+							</Link>
 						</div>
 					</div>
 				);

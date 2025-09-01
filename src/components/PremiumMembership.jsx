@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { BASE_URL } from "../utils/constants";
+import { BASE_URL } from "../config/constants";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { setClientSecret } from "../utils/clientSecretSlice";
+import { setClientSecret } from "../store/slice/clientSecretSlice";
 
 const membershipPlans = [
 	{

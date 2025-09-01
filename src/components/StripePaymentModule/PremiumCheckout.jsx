@@ -1,6 +1,6 @@
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import { STRIPE_PUBLISHABLE_KEY } from "../../utils/constants";
+import { STRIPE_PUBLISHABLE_KEY } from "../../config/constants";
 import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 

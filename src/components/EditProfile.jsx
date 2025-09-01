@@ -6,9 +6,9 @@ import {
 	XMarkIcon,
 } from "@heroicons/react/24/solid";
 import { useState } from "react";
-import { BASE_URL } from "../utils/constants";
+import { BASE_URL } from "../config/constants";
 import { useDispatch } from "react-redux";
-import { addUser } from "../utils/userSlice";
+import { addUser } from "../store/slice/userSlice";
 import axios from "axios";
 
 const EditProfile = ({ user }) => {

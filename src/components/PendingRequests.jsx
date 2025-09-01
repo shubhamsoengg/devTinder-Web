@@ -1,10 +1,10 @@
 import axios from "axios";
-import { BASE_URL } from "../utils/constants";
+import { BASE_URL } from "../config/constants";
 import { useDispatch, useSelector } from "react-redux";
 import {
 	setPendingRequests,
 	updatePendingRequest,
-} from "../utils/connectionSlice";
+} from "../store/slice/connectionSlice";
 import { useEffect } from "react";
 
 const PendingRequests = () => {
@@ -18,7 +18,6 @@ const PendingRequests = () => {
 				withCredentials: true,
 			});
 			const requestsData = res?.data?.data;
-			console.log(requestsData);
 			dispatch(setPendingRequests(requestsData));
 		} catch (error) {
 			console.error("Error fetching pending requests:", error);
